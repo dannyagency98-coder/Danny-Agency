@@ -421,14 +421,14 @@ nav .socials {
 .current {
   color: #8d8d8d;
 }
- .preloader {
+  /* Preloader container */
+  .preloader {
     position: fixed;
     inset: 0;
-    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    background: #000;
     z-index: 9999;
     transition: opacity 1s ease, visibility 1s ease;
   }
@@ -438,24 +438,30 @@ nav .socials {
     visibility: hidden;
   }
 
+  /* Responsive circle */
   .circle {
-    width: 60px;
-    height: 60px;
-    border: 3px solid #fff;
+    width: min(200px, 40vw);
+    height: min(200px, 40vw);
+    border: 4px solid #fff;
     border-radius: 50%;
-    margin-bottom: 20px;
-    animation: pulse 1.5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 2s linear infinite;
+    position: relative;
   }
 
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.6; }
-    100% { transform: scale(1); opacity: 1; }
+  /* Rotating outline animation */
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
+  /* Count inside the circle */
   .count {
+    position: absolute;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     color: #fff;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
+    font-family: inherit;
     font-weight: bold;
   }
