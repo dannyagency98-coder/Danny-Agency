@@ -155,6 +155,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+   // Counting effect
+  let count = 0;
+  const counter = document.querySelector('.count');
+  const preloader = document.querySelector('.preloader');
+
+  const interval = setInterval(() => {
+    count++;
+    counter.textContent = count + '%';
+    if (count >= 100) {
+      clearInterval(interval);
+      // Fade out when complete
+      preloader.classList.add('fade-out');
+      setTimeout(() => preloader.remove(), 1000);
+    }
+  }, 20); // Adjust speed: lower = faster
+
+
   // Check on load and resize
   applyMobileStyles();
   window.addEventListener('resize', applyMobileStyles);
