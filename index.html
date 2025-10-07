@@ -101,24 +101,27 @@
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 <script src="index.js"></script>
-          <script>
- const preloader = document.querySelector('.preloader');
-  const counter = document.querySelector('.count');
-  let count = 0;
+<script>
+  // Count animation logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.querySelector(".preloader");
+    const counter = document.querySelector(".count");
+    let count = 0;
 
-  // Increase count from 0 to 100
-  const interval = setInterval(() => {
-    count++;
-    counter.textContent = count + '%';
-    if (count >= 100) {
-      clearInterval(interval);
-      // Fade out preloader
-      preloader.classList.add('fade-out');
-      // Remove preloader after fade animation
-      setTimeout(() => preloader.remove(), 1000);
-      // Re-enable scrolling
-      document.body.style.overflow = 'auto';
-    }
-  }, 20); // adjust speed if needed
-          </script>
+    const interval = setInterval(() => {
+      count++;
+      counter.textContent = count + "%";
+
+      if (count >= 100) {
+        clearInterval(interval);
+        // fade out preloader
+        preloader.classList.add("fade-out");
+        setTimeout(() => {
+          preloader.remove();
+          document.body.style.overflow = "auto";
+        }, 1000);
+      }
+    }, 20); // 0→100 in about 2 seconds
+  });
+</script>
     </body></html>
