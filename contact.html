@@ -1,0 +1,168 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Us - Danny Agency</title>
+    <meta name="description" content="Hire Danny Agency for top-notch web development services including website design, SEO, marketing, 3D works, and graphic design. Contact us to elevate your online presence.">
+    <meta name="robots" content="noindex, nofollow, nosnippet, noarchive">
+<meta name="keywords" content="hire web developers, website design, SEO services, marketing, 3D graphics, graphic design, Danny Agency, Lagos, Nigeria">
+<meta name="author" content="Danny Agency">
+<meta property="og:title" content="Hire Us - Danny Agency">
+<meta property="og:description" content="Hire Danny Agency for top-notch web development services including website design, SEO, marketing, 3D works, and graphic design. Contact us to elevate your online presence.">
+<meta property="og:image" content="logo.png">
+<meta property="og:url" content="https://www.danny-agency.com/contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hire Us - Danny Agency">
+<meta name="twitter:description" content="Hire Danny Agency for top-notch web development services including website design, SEO, marketing, 3D works, and graphic design. Contact us to elevate your online presence.">
+<meta name="twitter:image" content="logo.png">
+
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="contact.css" rel="stylesheet">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<div class="preloader">
+  <div class="circle"></div>
+</div>
+
+
+
+    <nav>
+
+        <input type="checkbox" id="click"> 
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <img src="https://firebasestorage.googleapis.com/v0/b/octen-29d12.appspot.com/o/presentations%2FUl5d1%2FchatImages%2F1721687289086_my_logo-removebg-preview.png?alt=media&token=33360df2-8425-4642-9867-209bee52f72e" alt="Logo" class="logo">
+        <a href="login.html" class="login"><i class="fa fa-user-circle"></i>Login</a>
+       <ul>
+          <li><a class="grad-text" href="/">Home</a></li>
+            <li><a class="grad-text" href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active current">Hire us</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+           <br>
+            <div class="socials">
+            <a href="https://instagram.com/danny_agency_" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@danny_agency_" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+        </ul>
+    </nav>
+    <h2>Contact Us</h2>
+    <div class="form-wrap">
+        <form id="contact-form">
+            <div class="wrap">
+
+                <input type="text" id="from_name" name="from_name" required placeholder=" ">
+                <label for="from_name">BUSINESS NAME</label>
+            </div>
+
+            <div class="wrap">
+
+                <input type="text" id="instagram" name="instagram" placeholder=" ">
+                <label for="instagram">INSTAGRAM</label>
+            </div>
+
+            <div class="wrap">
+                <input type="email" id="email" name="reply_email" required placeholder=" " />
+                <label for="email">EMAIL</label>
+            </div>
+
+            <select id="budget" name="budget" onchange="disableFirstOption()">
+                <option value="Budget">BUDGET</option>
+            <option value="Under $500">Under $500</option>
+            <option value="$500 - $1000">$500 - $1000</option>
+            <option value="$1000 - $5000">$1000 - $5000</option>
+            <option value="Over $5000">Over $5000</option>
+        </select>
+
+            <select id="referral" name="referral">
+                 <option value="DEFAULT">HOW DID YOU HEAR ABOUT US</option>
+            <option value="Google">Google</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Tiktok">Tiktok</option>
+            <option value="Newsletter">Newsletter</option>
+            <option value="Friend">Friend</option>
+            <option value="Other">Other</option>
+        </select>
+            <div class="txt-wrap">
+                <textarea id="message" name="message" required placeholder=" "></textarea>
+                <label for="message">MESSAGE</label>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="works">
+                <input type="radio" id="websitework" name="work" value="Website works">
+                <label for="websitework">Website works</label>
+            </div>
+            <div class="works">
+                <input type="radio" id="marketing" name="work" value="Marketing">
+                <label for="marketing">Marketing</label>
+            </div>
+            <div class="works">
+                <input type="radio" id="graphic" name="work" value="Graphic Design">
+                <label for="graphic">Graphic Design</label>
+            </div>
+            <div class="works">
+                <input type="radio" id="others" name="work" value="Others">
+                <label for="others">Others</label>
+            </div>
+<div id="success-message"></div>
+
+            <div class="button-cover">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        (function() {
+            emailjs.init("marCvRNYVsiFUrWCP"); // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            emailjs.sendForm("service_0sk5zyp","template_i1nobed", this)
+                .then(function() {
+                    document.getElementById('success-message').innerHTML = `<div class="success">Email sent successfully</div>`;
+                }, function(error) {
+                    alert('Failed to send email. Error: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+<script src="contact.js"></script>
+    <footer>
+       <div class="socials">
+             <a href="https://instagram.com/danny_agency_" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@danny_agency_" target="_blank"><i class="bi bi-tiktok"></i></a>
+        </div>
+        <a href="#" class="copyright">&copy; 2024 Danny Agency</a>
+    </footer>
+
+
+</body>
+
+</html>
