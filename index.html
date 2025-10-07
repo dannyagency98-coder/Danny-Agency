@@ -102,20 +102,23 @@
 
 <script src="index.js"></script>
           <script>
-               // Counting effect
-  let count = 0;
+ const preloader = document.querySelector('.preloader');
   const counter = document.querySelector('.count');
-  const preloader = document.querySelector('.preloader');
+  let count = 0;
 
+  // Increase count from 0 to 100
   const interval = setInterval(() => {
     count++;
     counter.textContent = count + '%';
     if (count >= 100) {
       clearInterval(interval);
-      // Fade out when complete
+      // Fade out preloader
       preloader.classList.add('fade-out');
+      // Remove preloader after fade animation
       setTimeout(() => preloader.remove(), 1000);
+      // Re-enable scrolling
+      document.body.style.overflow = 'auto';
     }
-  }, 20); // Adjust speed: lower = faster
+  }, 20); // adjust speed if needed
           </script>
     </body></html>
