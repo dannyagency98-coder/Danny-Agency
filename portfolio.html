@@ -67,7 +67,7 @@ body, html {
 }
 
 .card {
-  flex: 1 1 calc(33.333% - 2em); /* 3 per row on desktop */
+  flex: 1 1 calc(23.333% - 2em); /* 3 per row on desktop */
   background: var(--card-color);
   border-radius: 1em;
   padding: 1.5em;
@@ -80,8 +80,11 @@ body, html {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 25px 5px rgba(180, 180, 180, 0.3),  /* ash glow */
+    0 8px 20px rgba(0, 0, 0, 0.05);         /* subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
@@ -541,7 +544,7 @@ nav .socials {
         <a href="https://www.heatculture.in/" target="_blank" class="site">heatculture.in</a>
         <p> Heat Culture redefine premium streetwear with bold designs and quality craftsmanship.</p>
         <div class="meta">
-          <span class="year">2022</span>
+          <span class="year">2024</span>
           <a href="https://www.heatculture.in/" target="_blank" class="share">
             <i class="fa-solid fa-globe"></i>
           </a>
@@ -550,30 +553,30 @@ nav .socials {
 
       <!-- Kwabey -->
       <div class="card" style="--card-color:#f1ebfb;">
-        <img src="peaceinchaos.jpeg" alt="Kwabey Logo" loading="lazy">
-        <span class="tag">E-commerce</span>
-        <h2>Kwabey</h2>
-        <a href="https://www.peaceinchaos.in/" target="_blank" class="site">kwabey.com</a>
-        <p>We're all about breaking fashion norms with fearless creativity.</p>
+        <img src="https://cdn.shopify.com/s/files/1/0665/5849/2822/files/IMG_9171.png?v=1757995982" alt="Saharan rockin" loading="lazy">
+        <span class="tag">Comic series</span>
+        <h2>SAHARAN ROCKIN</h2>
+        <a href="https://www.saharanrockin.com/" target="_blank" class="site">saharanockin.com</a>
+        <p>A surreal Y2K-inspired manga series by Saharan Rockin Studios.</p>
         <div class="meta">
           <span class="year">2025</span>
-          <a href="https://www.peaceinchaos.in/" target="_blank" class="share">
-            <i class="fa-solid fa-share-from-square"></i>
+          <a href="https://www.saharanrockin.com/" target="_blank" class="share">
+            <i class="fa-solid fa-globe"></i>
           </a>
         </div>
       </div>
 
       <!-- Main Character India -->
       <div class="card" style="--card-color:#f2faf2;">
-        <img src="beeinspired.jpg" alt="Main Character India Logo" loading="lazy">
+        <img src="https://cdn.shopify.com/s/files/1/0643/4966/7573/files/Logo_black.png?v=1652407372" alt="anotherstate" loading="lazy">
         <span class="tag">Fashion & Lifestyle</span>
         <h2>Main Character India</h2>
-        <a href="https://www.beeinspiredclothing.com/en-ng" target="_blank" class="site">maincharacterindia.com</a>
-        <p>Drip that doesn't ask for attention — it owns the room.</p>
+        <a href="https://www.anotherstate.net/" target="_blank" class="site">anotherstate.net</a>
+        <p>An encounter of states conveyed through garments.</p>
         <div class="meta">
-          <span class="year">2025</span>
-          <a href="https://www.beeinspiredclothing.com/en-ng" target="_blank" class="share">
-            <i class="fa-solid fa-share-from-square"></i>
+          <span class="year">2024</span>
+          <a href="https://www.anotherstate.net/" target="_blank" class="share">
+            <i class="fa-solid fa-globe"></i>
           </a>
         </div>
       </div>
