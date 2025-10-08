@@ -1,4 +1,37 @@
+<?php
+$success = '';
+$error = '';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "dannyagency98@gmail.com";
+    $subject = "New Contact Form Submission - Danny Agency";
+
+    $from_name = htmlspecialchars($_POST['from_name']);
+    $instagram = htmlspecialchars($_POST['instagram']);
+    $email = htmlspecialchars($_POST['reply_email']);
+    $budget = htmlspecialchars($_POST['budget']);
+    $referral = htmlspecialchars($_POST['referral']);
+    $work = htmlspecialchars($_POST['work']);
+    $message = htmlspecialchars($_POST['message']);
+
+    $body = "Business Name: $from_name\n";
+    $body .= "Instagram: $instagram\n";
+    $body .= "Email: $email\n";
+    $body .= "Budget: $budget\n";
+    $body .= "Referral: $referral\n";
+    $body .= "Work Type: $work\n\n";
+    $body .= "Message:\n$message\n";
+
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    if (mail($to, $subject, $body, $headers)) {
+        $success = "Email sent successfully! We'll get back to you shortly.";
+    } else {
+        $error = "Failed to send email. Please try again later.";
+    }
+}
+?>
 <html lang="en">
 
 <head>
@@ -12,7 +45,7 @@
 <meta property="og:title" content="Hire Us - Danny Agency">
 <meta property="og:description" content="Hire Danny Agency for top-notch web development services including website design, SEO, marketing, 3D works, and graphic design. Contact us to elevate your online presence.">
 <meta property="og:image" content="logo.png">
-<meta property="og:url" content="https://www.danny-agency.com/contact.html">
+<meta property="og:url" content="https://www.danny-agency.com/contact.php">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hire Us - Danny Agency">
 <meta name="twitter:description" content="Hire Danny Agency for top-notch web development services including website design, SEO, marketing, 3D works, and graphic design. Contact us to elevate your online presence.">
@@ -553,7 +586,7 @@ nav .socials {
        <ul>
           <li><a class="grad-text" href="index.html">Home</a></li>
             <li><a class="grad-text" href="portfolio.html">Works</a></li>
-            <li><a href="contact.html" class="active current">Hire us</a></li>
+            <li><a href="contact.php" class="active current">Hire us</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="faqs.html">FAQs</a></li>
            <br>
@@ -565,35 +598,40 @@ nav .socials {
         </ul>
     </nav>
     <h2>Contact Us</h2>
-    <div class="form-wrap">
-        <form id="contact-form">
-            <div class="wrap">
+<div class="form-wrap">
+    <?php
+        if (!empty($success)) {
+            echo "<div class='success'>$success</div>";
+        } elseif (!empty($error)) {
+            echo "<div class='error'>$error</div>";
+        }
+    ?>
+    <form method="POST" action="">
+        <div class="wrap">
+            <input type="text" id="from_name" name="from_name" required placeholder=" ">
+            <label for="from_name">BUSINESS NAME</label>
+        </div>
 
-                <input type="text" id="from_name" name="from_name" required placeholder=" ">
-                <label for="from_name">BUSINESS NAME</label>
-            </div>
+        <div class="wrap">
+            <input type="text" id="instagram" name="instagram" placeholder=" ">
+            <label for="instagram">INSTAGRAM</label>
+        </div>
 
-            <div class="wrap">
+        <div class="wrap">
+            <input type="email" id="email" name="reply_email" required placeholder=" " />
+            <label for="email">EMAIL</label>
+        </div>
 
-                <input type="text" id="instagram" name="instagram" placeholder=" ">
-                <label for="instagram">INSTAGRAM</label>
-            </div>
-
-            <div class="wrap">
-                <input type="email" id="email" name="reply_email" required placeholder=" " />
-                <label for="email">EMAIL</label>
-            </div>
-
-            <select id="budget" name="budget" onchange="disableFirstOption()">
-                <option value="Budget">BUDGET</option>
+        <select id="budget" name="budget" required>
+            <option value="" disabled selected>BUDGET</option>
             <option value="Under $500">Under $500</option>
             <option value="$500 - $1000">$500 - $1000</option>
             <option value="$1000 - $5000">$1000 - $5000</option>
             <option value="Over $5000">Over $5000</option>
         </select>
 
-            <select id="referral" name="referral">
-                 <option value="DEFAULT">HOW DID YOU HEAR ABOUT US</option>
+        <select id="referral" name="referral" required>
+            <option value="" disabled selected>HOW DID YOU HEAR ABOUT US</option>
             <option value="Google">Google</option>
             <option value="Instagram">Instagram</option>
             <option value="Tiktok">Tiktok</option>
@@ -601,41 +639,35 @@ nav .socials {
             <option value="Friend">Friend</option>
             <option value="Other">Other</option>
         </select>
-            <div class="txt-wrap">
-                <textarea id="message" name="message" required placeholder=" "></textarea>
-                <label for="message">MESSAGE</label>
-            </div>
 
+        <div class="txt-wrap">
+            <textarea id="message" name="message" required placeholder=" "></textarea>
+            <label for="message">MESSAGE</label>
+        </div>
 
+        <div class="works">
+            <input type="radio" id="websitework" name="work" value="Website works" required>
+            <label for="websitework">Website works</label>
+        </div>
+        <div class="works">
+            <input type="radio" id="marketing" name="work" value="Marketing">
+            <label for="marketing">Marketing</label>
+        </div>
+        <div class="works">
+            <input type="radio" id="graphic" name="work" value="Graphic Design">
+            <label for="graphic">Graphic Design</label>
+        </div>
+        <div class="works">
+            <input type="radio" id="others" name="work" value="Others">
+            <label for="others">Others</label>
+        </div>
 
+        <div class="button-cover">
+            <button type="submit">Send</button>
+        </div>
+    </form>
+</div>
 
-
-
-
-
-            <div class="works">
-                <input type="radio" id="websitework" name="work" value="Website works">
-                <label for="websitework">Website works</label>
-            </div>
-            <div class="works">
-                <input type="radio" id="marketing" name="work" value="Marketing">
-                <label for="marketing">Marketing</label>
-            </div>
-            <div class="works">
-                <input type="radio" id="graphic" name="work" value="Graphic Design">
-                <label for="graphic">Graphic Design</label>
-            </div>
-            <div class="works">
-                <input type="radio" id="others" name="work" value="Others">
-                <label for="others">Others</label>
-            </div>
-<div id="success-message"></div>
-
-            <div class="button-cover">
-                <button type="submit">Send</button>
-            </div>
-        </form>
-    </div>
 
     <script>
         (function() {
