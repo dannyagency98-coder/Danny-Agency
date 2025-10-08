@@ -26,7 +26,375 @@
 <link href="/login.css" rel="stylesheet">
         </head>
         <body>
+<style>
+  
+*{
+    margin: 0;
+    padding: 0;
+    transition: .2s;
+    font-family: "Archivo Black", sans-serif;
+}
+*:focus {
+  border: none;
+  outline: none;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+}
 
+  nav {
+            display: flex;
+            height: 80px;
+            background: #010101;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 50px;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            text-transform: uppercase !important;
+        }
+        nav .logo {
+            color: #fff;
+            font-size: 35px;
+            font-weight: 600;
+            display: none;
+            width: 2em;
+            position: relative;
+            left: .4em;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            z-index: 10;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 5px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 9999px;
+            letter-spacing: 1px;
+             
+        }
+        nav a.active {
+            background-color: #f1f2f6;
+            background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
+            color: #000;
+        }
+        @media (max-width: 48em) {
+            nav a.active {
+              width: auto;
+              display: inline-flex;
+              padding: .6em 2em;
+            }
+            .logo {
+                display: block !important;
+            }
+            nav {
+                flex-direction: row;
+                align-items: center;
+            }
+            nav ul li a {
+                opacity: 0; /* Start with hidden links */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+        }
+        }
+        nav ul li a:hover {
+            color: #8d8d8d;
+            border-radius: 9999px;
+        }
+        nav .menu-btn {
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        @media (max-width: 1000px) {
+            nav {
+                padding: 0 30px;
+            }
+        }
+        @media (max-width: 920px) {
+            nav .menu-btn {
+                display: block;
+            }
+            #click:checked ~ .menu-btn i:before {
+                content: "\f00d";
+            }
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: #000;
+                height: 100vh;
+                width: 100%;
+                text-align: center;
+                display: block;
+                transition: all 0.3s ease;
+            }
+            #click:checked ~ ul {
+                left: 0;
+            }
+            nav ul li {
+                width: 100%;
+                margin: 10px 0;
+            }
+            nav ul li a {
+                margin-left: -100%;
+                display: block;
+                font-size: 20px;
+                transition: margin-left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            /* Effect applied when menu is open */
+#click:checked ~ ul li a {
+  opacity: 1; /* Make visible */
+  transform: translateX(0); /* Slide in */
+  margin: 0 !important;
+}
+        }
+
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 5%;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+}
+.copyright {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.socials {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.socials a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo {
+  width: 2em;
+}
+@media (max-width: 40em){
+   
+    .link-wrap {
+        gap: 0;
+         justify-content: space-between;
+         gap: 2em;
+    }
+    .header h1 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 1em;
+}
+nav ul li a {
+  padding: 1em 0;
+}
+footer {
+  position: relative;
+}
+.form-wrap {
+  padding: 1em;
+}
+form {
+  width: 100%;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+.login {
+   font-size: .8em;
+}
+}
+.login {
+  display: flex;
+  gap: .8em;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.login:hover {
+  color: #8d8d8d !important;
+}
+nav ul li a {
+  display: flex;
+    transition: .2s ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+nav .active:hover {
+  transform: scale(0.9) !important;
+  color: #000 !important;
+}
+.current {
+            color: #8d8d8d;
+        }
+.form-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+form {
+  height: 20em;
+  min-width: 400px;
+  max-width: 500px;
+}
+form h1, p {
+  color: #f0f0f0;
+  text-align: center;
+}
+form input {
+  height: 100%;
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: #fff;
+  padding-inline: 1em;
+}
+.wrap i {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap {
+  height: 3em;
+  width: 100%;
+  background: #111;
+  display: flex;
+  color: #fff;
+  border-radius: .3em;
+  border: 2px solid #fff;
+  margin-bottom: 1em;
+  position: relative;
+}
+.wrap label, .txt-wrap label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    transition: 0.2s ease all;
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none; /* Prevents label from interfering with input */
+    font-weight: bold;
+    
+}
+.wrap input:focus + label, .txt-wrap textarea:focus + label,
+.wrap input:not(:placeholder-shown) + label, .txt-wrap textarea:not(:placeholder-shown) + label {
+    top: 2px !important; /* Move label up */
+    left: 10px; /* Keep label aligned */
+    font-size: 12px; /* Make label smaller */
+    color: #fff; /* Change label color on focus */
+}
+.wrap input:hover + label, textarea:hover + label {
+    color: #fff;
+}
+.button-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+  height: 3em;
+  border: none;
+  background: linear-gradient(90deg, #333, #222);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: .4em;
+  padding: 0 3em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+#toggleButton {
+    padding: 0 !important;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5em;
+    width: 3em;
+    margin: 0 !important;
+    border-radius: none;
+}
+nav .socials {
+    display: none;
+    gap: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+@media (max-width: 48em) {
+nav .socials {
+    display: flex !important;
+    gap: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    z-index: 9999;
+  }
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    animation: zoomFade 1s ease-in-out infinite;
+  }
+
+  @keyframes zoomFade {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+</style>
 
 <div class="preloader">
   <div class="circle"></div>
@@ -84,6 +452,63 @@
         </div>
   <a href="#" class="copyright">&copy; 2025 Danny Agency</a>
 </footer>
-<script src="/login.js"></script>
+<script>
+  document.getElementById('toggleButton').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent form submission
+            const passwordField = document.querySelector('.password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                this.innerHTML = `<i class="bi bi-eye-slash-fill"></i>`;
+            } else {
+                passwordField.type = 'password';
+                this.innerHTML = `<i class="bi bi-eye-fill"></i>`;
+            }
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const checkbox = document.getElementById('click');
+  const links = document.querySelectorAll('nav ul li a');
+
+  const applyMobileStyles = () => {
+    if (window.innerWidth <= 920) {
+      // Apply fade-in and slide-in effect for mobile
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          links.forEach((link, index) => {
+            link.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            link.style.transform = 'translateX(0)'; // Slide in effect
+            link.style.opacity = 1; // Fade in effect
+          });
+        } else {
+          // Reset state when checkbox is unchecked
+          links.forEach(link => {
+            link.style.transition = 'none';
+            link.style.transform = 'translateX(-100%)'; // Slide out effect
+            link.style.opacity = 0; // Fade out effect
+          });
+        }
+      });
+    } else {
+      // Ensure links are fully visible and positioned correctly for desktop
+      links.forEach(link => {
+        link.style.transition = 'none';
+        link.style.transform = 'translateX(0)'; // Positioned correctly
+        link.style.opacity = 1; // Full opacity
+      });
+    }
+  };
+
+  // Check on load and resize
+  applyMobileStyles();
+  window.addEventListener('resize', applyMobileStyles);
+});
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.preloader').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }, 2000);
+  });
+</script>
 
     </body></html>
