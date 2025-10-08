@@ -48,13 +48,6 @@ body, html {
   height: 100vh;
   overflow: scroll;
 }
-body {
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
-  margin: 0;
-  padding: 0;
-  color: #222;
-}
 
 .websites h1 {
   text-align: center;
@@ -74,6 +67,7 @@ body {
 }
 
 .card {
+  flex: 1 1 calc(33.333% - 2em); /* 3 per row on desktop */
   background: var(--card-color);
   border-radius: 1em;
   padding: 1.5em;
@@ -153,6 +147,8 @@ body {
 @media (max-width: 768px) {
   .card {
     width: 90%;
+    flex: 1 1 calc(50% - 2em); /* 2 per row on tablet */
+    max-width: calc(50% - 2em);
   }
 }
 
@@ -539,8 +535,8 @@ nav .socials {
 
       <!-- WTFlex -->
       <div class="card" style="--card-color:#e9f7f7;">
-        <img src="heatculture.jpg" alt="WTFlex Logo" loading="lazy">
-        <span class="tag">Streetwear Fashion</span>
+        <img src="heatculture.jpg" alt="heatculture Logo" loading="lazy">
+        <span class="tag">Clothing brand</span>
         <h2>WTFlex</h2>
         <a href="https://www.heatculture.in/" target="_blank" class="site">wtflex.in</a>
         <p>WHAT THE FLEX is a streetwear fashion brand redefining culture.</p>
