@@ -242,6 +242,7 @@ footer {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  font-style: normal;
 }
 .socials {
   display: flex;
@@ -637,22 +638,44 @@ nav .socials {
     </form>
 </div>
 
-    <script>
-        (function() {
-            emailjs.init("ml8GpF6KTxTEOJxvr"); // Replace with your EmailJS User ID
-        })();
+<script>
+(function() {
+    emailjs.init("ml8GpF6KTxTEOJxvr"); // Your EmailJS public key
+})();
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-            emailjs.sendForm("service_0sk5zyp","template_i1nobed", this)
-                .then(function() {
-                    document.getElementById('success-message').innerHTML = `<div class="success">Email sent successfully</div>`;
-                }, function(error) {
-                    alert('Failed to send email. Error: ' + JSON.stringify(error));
-                });
+    const form = this;
+    const userEmail = document.getElementById('email').value;
+    const userName = document.getElementById('from_name').value;
+    const userMessage = document.getElementById('message').value;
+
+    // 1️⃣ Send Contact Us email to admin
+    emailjs.sendForm("service_0sk5zyp", "template_aseqaaw", form)
+        .then(function() {
+            console.log("Admin email sent successfully");
+
+            // 2️⃣ Send Auto-Reply email to user
+            emailjs.send("service_0sk5zyp", "template_6tcfzt4", {
+                email: userEmail,
+                name: userName,
+                message: userMessage
+            }).then(function() {
+                document.getElementById('success-message').innerHTML = 
+                    `<div class="success">Message sent successfully! Auto-reply sent to ${userEmail}.</div>`;
+            }, function(error) {
+                console.error("Auto-reply failed: ", error);
+                document.getElementById('success-message').innerHTML = 
+                    `<div class="success">Message sent successfully, but auto-reply failed.</div>`;
+            });
+
+        }, function(error) {
+            alert('Failed to send message. Error: ' + JSON.stringify(error));
         });
-    </script>
+});
+</script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
             const logo = document.querySelector('.logo');
@@ -725,7 +748,7 @@ window.addEventListener('load', () => {
             <a href="https://www.tiktok.com/@danny_agency_" target="_blank"><i class="bi bi-tiktok"></i></a>
            <a href="/" target="_blank"><i class="bi bi-discord"></a>
         </div>
-        <a href="#" class="copyright">&copy; 2025 DANNY AGENCY,ALL RIGHTS RESERVEDy</a>
+        <a href="#" class="copyright">&copy; 2025 DANNY AGENCY,ALL RIGHTS RESERVED</a>
     </footer>
 
 
