@@ -50,6 +50,21 @@ body, html {
   perspective: 1000px;
   font-family: "Archivo Black", sans-serif;
 }
+/* Fade-in keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply to body or main wrapper */
+body {
+    animation: fadeIn 1s ease-in forwards;
+}
+
 
 h2 {
     font-family: "Archivo Black", sans-serif;
