@@ -48,197 +48,112 @@ body, html {
   height: 100vh;
   overflow: scroll;
 }
-.product {
-    margin-top: 4em;
-}
-
-.websites section {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 2em; /* Space between items */
-    justify-content: center; /* Center items horizontally */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+  color: #222;
 }
 
 .websites h1 {
-    color: #8d8d8d;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.product section {
-    padding: 1em 2%;
-    width: 96%; /* Ensure full width on small screens */
-}
-
-.product .item {
-    border: 2px solid #999;
-    border-radius: .3em;
-    overflow: hidden;
-    position: relative;
-    height: 18em; /* Fixed height for uniformity */
-    cursor: pointer;
-    margin-bottom: 1em;
-    flex: 1 1 calc(33% - 2em); /* Responsive width for larger screens */
-    max-width: calc(33% - 2em); /* Maximum width for larger screens */
-}
-
-.product .item img {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    position: relative;
-    transition: 2s ease-in-out;
-}
-.current {
-            color: #8d8d8d;
-        }
-.loader {
-        position: absolute;
-        
-        border: 4px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 4px solid #8d8d8d;
-        width: 30px;
-        height: 30px;
-        animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-.product .item .overlay {
-    height: 18em;
-    width: 100%;
-    position: absolute;
-    background-color: rgb(0,0,0,0.2);
-    transition: .2s;
-    top: 0; /* Adjusted to match item height */
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-.product .item .overlay.hidden {
-        display: none;
-    }
-
-.product .item:hover img {
-    transform: translateY(-65%);
-    position: relative;
-}
-.err:hover img {
-    transform: translateY(-7%) !important;
-    position: relative;
-}
-
-.product .item .overlay a {
-    text-decoration: none;
-    color: #222;
-    font-weight: bold;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 48em) {
-    .product .item {
-        flex: 1 1 calc(80% - 2em); /* Two items per row */
-        max-width: calc(70% - 2em);
-    }
-}
-
-@media (max-width: 30em) {
-    .product .item {
-        flex: 1 1 100%; /* One item per row */
-        max-width: 90%;
-        height: 15em;
-    }
-    .product .item .overlay {
-        height: 15em;
-    }
-}
-
-.marketing {
-  display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 2em; /* Space between items */
-    justify-content: center; /* Center items horizontally */
-}
-
-
-.marketing .item {
-  border: 2px solid #999;
-    border-radius: .3em;
-    overflow: hidden;
-    position: relative;
-    height: 18em; /* Fixed height for uniformity */
-    cursor: pointer;
-    margin-bottom: 1em;
-    flex: 1 1 calc(43% - 2em); /* Responsive width for larger screens */
-    max-width: calc(43% - 2em); /* Maximum width for larger screens */
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.marketing .item img {
-  width: 100%;
-  height: auto;
-}
-.marketing .item img {
-  height: 100%;
-}
-.t-head {
-  color: #8d8d8d;
-  padding: 0 1em;
   text-align: center;
-  margin-top: .5em;
-  margin-bottom: 1em;
+  color: #8d8d8d;
   text-transform: uppercase;
+  margin: 2em 0;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
-.marketing .item .overlay {
-  height: 18em;
-  width: 100%;
-  background: rgba(141, 141, 141, 0.5);
-  position: absolute;
-  top: 0%;
-  left:0%;
+
+.websites section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 0 2em 4em;
+}
+
+.card {
+  background: var(--card-color);
+  border-radius: 1em;
+  padding: 1.5em;
+  width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  transition: .4s ease-in-out;
-  color: #333;
-  text-transform: uppercase;
-  text-decoration: none;
-  opacity: 0;
-}
-.overlay i {
-  text-decoration: none;
-  font-size: 1.6em;
-}
-.marketing .item:hover .overlay {
-  opacity: 1;
-}
-/* Responsive Breakpoints */
-@media (max-width: 48em) {
-    .marketing .item {
-        flex: 1 1 calc(80% - 2em); /* Two items per row */
-        max-width: calc(70% - 2em);
-    }
+  align-items: flex-start;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 30em) {
-    .marketing .item {
-        flex: 1 1 100%; /* One item per row */
-        max-width: 90%;
-        height: 15em;
-    }
-    .marketing .item .overlay {
-        height: 15em;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 0.6em;
+  margin-bottom: 1em;
+}
+
+.tag {
+  background: #f6f6f6;
+  border-radius: 2em;
+  padding: 0.3em 0.9em;
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 0.8em;
+  display: inline-block;
+}
+
+.card h2 {
+  font-size: 1.3em;
+  color: #111;
+  margin: 0.2em 0;
+}
+
+.site {
+  color: #666;
+  font-size: 0.9em;
+  text-decoration: none;
+  margin-bottom: 0.6em;
+  display: block;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1.2em;
+}
+
+.meta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.share {
+  color: #333;
+  font-size: 1.3em;
+  transition: color 0.3s ease;
+}
+
+.share:hover {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
 }
 
 
@@ -577,7 +492,7 @@ nav .socials {
     height: 30px;
     border-radius: 50%;
     background-color: grey;
-    animation: zoomFade 1s ease-in-out infinite;
+    animation: zoomFade 2s ease-in-out infinite;
   }
 
   @keyframes zoomFade {
@@ -617,110 +532,59 @@ nav .socials {
         </div>
         </ul>
     </nav>
-    <div class="websites product">
-        <h1>Clothing brand Websites</h1>
-        <section>
-            <a href="https://www.heatculture.in/" target="_blank" class="item">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="heatculture.jpg" loading="lazy">
-                </div>
-            </a>
-            <a href="https://www.peaceinchaos.in/" target="_blank" class="item">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="peaceinchaos.jpeg" loading="lazy">
-                </div>
-            </a>
-            <a href="https://www.beeinspiredclothing.com/en-ng" target="_blank" class="item">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="beeinspired.jpg" loading="lazy">
-                </div>
-            </a>
-        </section>
-    </div>
-    <div class="websites product">
-        <h1>E-commerce websites</h1>
-        <section>
-            <a href="https://www.supremebeauty.com/" target="_blank" class="item err">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="supremebeauty-c.png" loading="lazy">
-                </div>
-            </a>
-            <a href="https://stickerly.shop/" target="_blank" class="item">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="stickerly-c.png" loading="lazy">
-                </div>
-            </a>
-            <a href="https://vampirefreaks.com/en-uk" target="_blank" class="item">
-                <div class="image-container">
-                    <div class="overlay">
-                        <div class="loader"></div>
-                    </div>
-                    <img src="vampire.jpeg" loading="lazy">
-                </div>
-            </a>
-        </section>
-    </div>
-     <div class="marquee-container" id="marquee">
-        <div class="marquee-content">
-            <span><img src="shopify.svg" class="ultra-small"></span>
-            <span><img src="html5.png" class="small"></span>
-            <span><img src="wordpress.png" class="small"></span>
-            <span><img src="javascript.svg" class="small"></span>
-             <span><img src="figma.png" class="ultra-small"></span>
-             <span><img src="tailwind.png" class="small"></span>
-            <span><img src="bootstrap.png" class="small"></span>
-          <span><img src="firebase.png" class="small"></span>
+
+  <div class="websites product">
+    <h1>Clothing Brand Websites</h1>
+    <section>
+
+      <!-- WTFlex -->
+      <div class="card" style="--card-color:#e9f7f7;">
+        <img src="heatculture.jpg" alt="WTFlex Logo" loading="lazy">
+        <span class="tag">Streetwear Fashion</span>
+        <h2>WTFlex</h2>
+        <a href="https://www.heatculture.in/" target="_blank" class="site">wtflex.in</a>
+        <p>WHAT THE FLEX is a streetwear fashion brand redefining culture.</p>
+        <div class="meta">
+          <span class="year">2022</span>
+          <a href="https://www.heatculture.in/" target="_blank" class="share">
+            <i class="fa-solid fa-share-from-square"></i>
+          </a>
         </div>
-    </div>
-    
-    <h1 class="t-head">
-      Marketing Analytics
-    </h1>
-    <div class="marketing">
-  <div class="item">
-    <img src="analytics1.webp">
-    <a href="analytics1.webp" download="analytic1.webp" class="overlay">
-      <i class="bi bi-download"></i>
-      Download
-    </a>
-    </div>
-      <div class="item">
-    <img src="analytics2.png">
-    <a href="analytics2.png" download="analytics2.png" class="overlay">
-      <i class="bi bi-download"></i>
-      Download
-    </a>
-    </div>
-      <div class="item">
-    <img src="analytics3.png">
-    <a href="analytics3.png" download="analytics3.png" class="overlay">
-      <i class="bi bi-download"></i>
-      Download
-    </a>
-    </div>
-      <div class="item">
-    <img src="analytics4.webp">
-    <a href="analytics4.webp" download="analytics4.webp" class="overlay">
-      <i class="bi bi-download"></i>
-      Download
-    </a>
-    </div>
-</div>
+      </div>
+
+      <!-- Kwabey -->
+      <div class="card" style="--card-color:#f1ebfb;">
+        <img src="peaceinchaos.jpeg" alt="Kwabey Logo" loading="lazy">
+        <span class="tag">E-commerce</span>
+        <h2>Kwabey</h2>
+        <a href="https://www.peaceinchaos.in/" target="_blank" class="site">kwabey.com</a>
+        <p>We're all about breaking fashion norms with fearless creativity.</p>
+        <div class="meta">
+          <span class="year">2025</span>
+          <a href="https://www.peaceinchaos.in/" target="_blank" class="share">
+            <i class="fa-solid fa-share-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Character India -->
+      <div class="card" style="--card-color:#f2faf2;">
+        <img src="beeinspired.jpg" alt="Main Character India Logo" loading="lazy">
+        <span class="tag">Fashion & Lifestyle</span>
+        <h2>Main Character India</h2>
+        <a href="https://www.beeinspiredclothing.com/en-ng" target="_blank" class="site">maincharacterindia.com</a>
+        <p>Drip that doesn't ask for attention — it owns the room.</p>
+        <div class="meta">
+          <span class="year">2025</span>
+          <a href="https://www.beeinspiredclothing.com/en-ng" target="_blank" class="share">
+            <i class="fa-solid fa-share-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
 
   
     <footer>
