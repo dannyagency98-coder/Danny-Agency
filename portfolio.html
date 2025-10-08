@@ -48,27 +48,19 @@ body, html {
   height: 100vh;
   overflow: scroll;
 }
-/* Throw-in animation keyframes from bottom */
-@keyframes throwInFromBottom {
+/* Fade-in keyframes */
+@keyframes fadeIn {
     0% {
-        transform: translateY(100px);
         opacity: 0;
     }
-    60% {
-        transform: translateY(-10px);
-        opacity: 1;
-    }
-    80% {
-        transform: translateY(5px);
-    }
     100% {
-        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Apply animation to body or main wrapper */
+/* Apply to body or main wrapper */
 body {
-    animation: throwInFromBottom 1s ease-out forwards;
+    animation: fadeIn 1s ease-in forwards;
 }
 
 .websites h1 {
