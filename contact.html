@@ -380,42 +380,7 @@ textarea {
 textarea:hover, textarea:focus {
 border: 1.3px solid #fff;
 }
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.button::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-  z-index: -1;
-}
 
-.button:hover::before {
-  transform: scaleX(1);
-}
-
-.button::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.5s ease 0.25s; /* delay for diagonal effect */
-  z-index: -1;
-}
-
-.button:hover::after {
-  transform: scaleY(1);
-}
 button {
   height: 3em;
   border: none;
@@ -427,6 +392,10 @@ button {
   padding: 0 3em;
   margin-top: 1em;
 }
+.button:hover {
+  border: 1px solid #e5e5e5
+}
+
 #referral {
     margin-top: 1em;
 }
