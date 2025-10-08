@@ -380,12 +380,12 @@ textarea {
 textarea:hover, textarea:focus {
 border: 1.3px solid #fff;
 }
-.button-cover {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.button-cover::before {
+.button::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -397,11 +397,11 @@ border: 1.3px solid #fff;
   z-index: -1;
 }
 
-.button-cover:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-.button-cover::after {
+.button::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -413,7 +413,7 @@ border: 1.3px solid #fff;
   z-index: -1;
 }
 
-.button-cover:hover::after {
+.button:hover::after {
   transform: scaleY(1);
 }
 button {
@@ -639,12 +639,6 @@ nav .socials {
         </div>
 
 
-
-
-
-
-
-
         <div class="works">
                 <input type="radio" id="websitework" name="work" value="Website works">
             <label for="websitework">Website works</label>
@@ -661,10 +655,10 @@ nav .socials {
             <input type="radio" id="others" name="work" value="Others">
             <label for="others">Others</label>
         </div>
-<div id="success-message"></div>
 
         <div class="button-cover">
             <button type="submit">Send</button>
+            <div id="success-message"></div>
         </div>
     </form>
 </div>
@@ -680,14 +674,37 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault(); // Prevent default form submission
 
     const form = this;
+    const successDiv = document.getElementById('success-message');
+
+    // Clear any previous messages
+    successDiv.innerHTML = '';
 
     // 1️⃣ Send the main "Contact Us" email to your inbox
     emailjs.sendForm("service_7s6dqpb", "template_aseqaaw", form)
         .then(function() {
-            // Show success message
-            document.getElementById('success-message').innerHTML = `
-                <div class="success">Message sent successfully!</div>
+            // Show professional success message
+            successDiv.innerHTML = `
+                <div style="
+                    background-color: #e6ffed;
+                    border: 1px solid #34c759;
+                    color: #065f46;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    font-family: Arial, sans-serif;
+                    font-size: 16px;
+                    text-align: center;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                    animation: fadeIn 0.5s ease-out;
+                ">
+                    ✅ Your message has been sent successfully!<br>
+                    We will get back to you within 24 hours.
+                </div>
             `;
+
+            // Fade out message after 5 seconds
+            setTimeout(() => {
+                successDiv.innerHTML = '';
+            }, 5000);
 
             // Optionally: clear the form
             form.reset();
@@ -704,6 +721,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         });
 });
 </script>
+
+<style>
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 
 
 <script>
