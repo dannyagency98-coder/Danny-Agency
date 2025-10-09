@@ -379,6 +379,7 @@ nav ul li a {
 nav .active:hover {
   transform: scale(0.9) !important;
   color: #000 !important;
+  transition: .3s ease-in-out !important
 }
 .logo {
   width: 2em;
@@ -558,6 +559,65 @@ h2 {
     justify-content: center;
     padding: 50px 16px;
 }
+        /* ===== IMPACT SECTION ===== */
+.impact-section {
+  background-color: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* Headings */
+.impact-section h1,
+.impact-section h2,
+.impact-section h3 {
+  color: #fff;
+}
+
+/* Subheading / paragraph */
+.impact-section p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* Feature boxes */
+.impact-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.feature {
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature i {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impact-features {
+    flex-direction: column;
+    align-items: center;
+  }
+    .copyright {
+    font-size: 12px;
+}
     </style>
     <nav>
         <input type="checkbox" id="click">
@@ -661,6 +721,33 @@ h2 {
     </div>
   </a>
 </section>
+      <section class="impact-section">
+  <div class="container">
+    <h2>From Idea to Impact</h2>
+    <p>Every project follows our proven methodology to ensure exceptional results...</p>
+
+    <div class="impact-features">
+      <div class="feature">
+        <i class="icon-calendar"></i>
+        <h3>2–4 Week Delivery</h3>
+        <p>Rapid development cycles that get you to market 3x faster than traditional firms.</p>
+      </div>
+
+      <div class="feature">
+        <i class="icon-users"></i>
+        <h3>Collaborative Process</h3>
+        <p>Weekly check-ins and continuous feedback loops ensure your vision comes to life.</p>
+      </div>
+
+      <div class="feature">
+        <i class="icon-graph"></i>
+        <h3>Measurable Results</h3>
+        <p>Every project includes performance metrics and ongoing optimization recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <footer>
       <p>For more of our works and services, <a href="mailto:dannyagency98@gmail.com">contact us</a></p>
         <div class="socials">
