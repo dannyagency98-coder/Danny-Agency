@@ -81,7 +81,7 @@ body {
 }
 
 .card {
-  flex: 1 1 calc(23.333% - 2em); /* 3 per row on desktop */
+  flex: 1 1 calc(23.333% - 2em);
   background: var(--card-color);
   border-radius: 1em;
   padding: 1.5em;
@@ -91,13 +91,13 @@ body {
   align-items: flex-start;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid black;
+  border: 1px solid #ccc;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px 5px rgba(200, 200, 200, 0.4), 
-              0 0 30px 10px rgba(200, 200, 200, 0.2);
+  transform: translateY(-5px);
+    box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.4), 
+                0 0 15px 8px rgba(200, 200, 200, 0.2);
 }
 
 .card img {
@@ -110,26 +110,31 @@ body {
   border-radius: 2em;
   padding: 0.3em 0.9em;
   font-size: 0.8em;
-  color: #000000;
+  color: #ccc;
   margin-bottom: 0.8em;
   display: inline-block;
   background: transparent;
- border: 1px solid black;
+  border: 1px solid #ccc;
 }
 
-.card h2 {
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
   font-size: 1.3em;
-  color: #111;
+  color: #fff;
   margin: 0.2em 0;
-    text-transform: uppercase;
-    align-items: flex-start;
-    display: flex;
-    justify-content: left;
-    padding: 0;
+  text-transform: uppercase;
+  align-items: flex-start;
+  display: flex;
+  justify-content: left;
+  padding: 0;
 }
 
 .site {
-  color: #000000;
+  color: #ccc;
   font-size: 0.9em;
   text-decoration: none;
   margin-bottom: 0.6em;
@@ -137,51 +142,52 @@ body {
 }
 
 .card p {
-  color: #000000;
+  color: #ccc;
   font-size: 0.9em;
   line-height: 1.5;
   margin-bottom: 1.2em;
 }
 
 .meta {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
 }
 
 .year {
-  color: #000000;
+  color: #ccc;
   font-size: 0.9em;
 }
 
 .share {
-  color: #333;
+  color: #ccc;
   font-size: 1.3em;
   transition: color 0.3s ease;
 }
 
 .share:hover {
-  color: #000;
+  color: #fff;
 }
 
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-    .link-row {
-    margin: 8px 0 12px;
-    display: flex;
-    gap: 5px;
-  }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.link-row {
+  margin: 8px 0 12px;
+  display: flex;
+  gap: 5px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
   .card {
     width: 300px;
-    flex: 1 1 calc(50% - 2em); /* 2 per row on tablet */
+    flex: 1 1 calc(50% - 2em);
   }
 }
 
@@ -577,7 +583,7 @@ h2 {
      <!-- Works Section -->
   <!-- HEAT CULTURE -->
   <a href="https://www.heatculture.in/" target="_blank" class="card-link">
-    <div class="card" style="--card-color:#e9f8ef;">
+    <div class="card" style="--card-color:#1a1a1a;">
       <img src="https://cdn.shopify.com/s/files/1/0738/3665/9009/files/heat_culture_no_bg_center.png?v=1728842338" alt="heatculture Logo" loading="lazy">
     
       <span class="tag" style="background: rgb(228 228 231); border: none; color: black"> Clothing brand</span>
@@ -602,7 +608,7 @@ h2 {
 
   <!-- SAHARAN ROCKIN -->
   <a href="https://www.saharanrockin.com/" target="_blank" class="card-link">
-    <div class="card" style="--card-color:#fcf4fb;">
+    <div class="card" style="--card-color:#1a1a1a;">
       <img src="https://cdn.shopify.com/s/files/1/0665/5849/2822/files/IMG_9171.png?v=1757995982" alt="Saharan rockin" loading="lazy">
    
       <span class="tag"  style="background: rgb(228 228 231); border: none; color: black">Comic series</span>
@@ -627,7 +633,7 @@ h2 {
 
   <!-- MAIN CHARACTER INDIA -->
   <a href="https://www.anotherstate.net/" target="_blank" class="card-link">
-    <div class="card" style="--card-color:#ffffff;">
+    <div class="card" style="--card-color: #1a1a1a;">
       <img src="https://cdn.shopify.com/s/files/1/0945/2411/3199/files/Social-Sharing-Image.webp?v=1759911990" alt="anotherstate" loading="lazy">
       
       <span class="tag"  style="background: rgb(228 228 231); border: none; color: black">Fashion & Lifestyle</span>
@@ -783,6 +789,23 @@ window.addEventListener('load', () => {
   });
 
     </script>
+    <!-- Optimize Page Load Speed -->
+<script>
+  // Defer loading of images for better performance
+  document.addEventListener("DOMContentLoaded", function() {
+    const imgs = document.querySelectorAll("img[data-src]");
+    imgs.forEach(img => {
+      img.setAttribute("src", img.getAttribute("data-src"));
+      img.onload = () => img.removeAttribute("data-src");
+    });
+  });
+
+  // Minimize reflows & repaints
+  window.addEventListener("load", () => {
+    document.body.style.visibility = "visible";
+  });
+</script>
+
 </body>
 
 </html>

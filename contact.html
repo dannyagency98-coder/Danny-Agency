@@ -800,9 +800,26 @@ window.addEventListener('load', () => {
   });
 
 </script>
+<!-- Optimize Page Load Speed -->
+<script>
+  // Defer loading of images for better performance
+  document.addEventListener("DOMContentLoaded", function() {
+    const imgs = document.querySelectorAll("img[data-src]");
+    imgs.forEach(img => {
+      img.setAttribute("src", img.getAttribute("data-src"));
+      img.onload = () => img.removeAttribute("data-src");
+    });
+  });
+
+  // Minimize reflows & repaints
+  window.addEventListener("load", () => {
+    document.body.style.visibility = "visible";
+  });
+</script>
+
     <footer>
        <div class="socials">
-             <a href="https://instagram.com/dannyagency" target="_blank"><i class="bi bi-instagram"></i></a>
+             <a href="https://instagram.com/dannyagency_" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://www.tiktok.com/@danny_agency_" target="_blank"><i class="bi bi-tiktok"></i></a>
            <a href="/" target="_blank"><i class="bi bi-discord"></a>
         </div>
