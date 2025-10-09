@@ -30,6 +30,97 @@
 </head>
 <body>
     <style>
+      /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #ccc;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+.hero-section {
+  padding: 80px 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left text */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.hero-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
         
 *{
     margin: 0;
@@ -468,6 +559,50 @@ nav .socials {
         </div>
         </div>
     </section>
+
+      <section class="hero-section">
+    <div class="container">
+      <!-- Left Content -->
+      <div class="hero-text">
+        <h1>Build to Ship,<br>Scaled to Win</h1>
+        <p>
+          We're a product and growth firm built by founders, for founders. Every strategy session,
+          every line of code, every design decision is crafted with the same entrepreneurial mindset
+          you bring to your business—because we've been in your shoes.
+        </p>
+        <p>
+          Our team combines startup agility with enterprise expertise, ensuring your project benefits
+          from both speed and sophistication. We believe great partnerships create great outcomes,
+          and our 45+ successful launches speak to that philosophy.
+        </p>
+      </div>
+
+      <!-- Right Content (Cards) -->
+      <div class="hero-cards">
+        <div class="card">
+          <h3>Growth-Driven</h3>
+          <p>Every decision we make is optimized for your long-term success and scalable growth.</p>
+        </div>
+        <div class="card">
+          <h3>True Partnership</h3>
+          <p>We don't disappear after launch. We're invested in your success for the long haul.</p>
+        </div>
+        <div class="card">
+          <h3>Founder-First</h3>
+          <p>We think like founders, not vendors. Your vision becomes our mission.</p>
+        </div>
+        <div class="card">
+          <h3>Stage-Smart</h3>
+          <p>From MVP to enterprise scale, we adapt our approach to your business stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
     <section class="what-we-do text-white text-center py-5">
         <h2>What We Do</h2>
         <div class="row">
