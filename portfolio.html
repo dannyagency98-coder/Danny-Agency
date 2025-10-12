@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Danny Agency</title>
+    <title>Works - Danny Agency</title>
     <meta name="description" content="Explore the portfolio of Danny Agency showcasing our web development projects, including website design, SEO, marketing, 3D works, and graphic design.">
 <meta name="keywords" content="portfolio, web development projects, website design, SEO, marketing, 3D graphics, graphic design, Danny Agency, Lagos, Nigeria">
     <meta name="robots" content="index, follow, snippet, archive">
@@ -40,6 +40,11 @@
 *::-webkit-scrollbar {
   display: none;
 }
+ @media (max-width: 920px) {
+  h2{
+    font-size48px;
+  }
+ }
 body, html {
     margin: 0;
     padding: 0;
@@ -365,6 +370,7 @@ footer p a {
   gap: .5em;
   font-weight: bold;
   padding-right: 3em;
+  display: none;
 }
 .login:hover {
   color: #8d8d8d !important;
@@ -741,7 +747,6 @@ h2 {
   color: #fff;
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 20px;
   line-height: 1.2;
 }
 
@@ -777,7 +782,7 @@ h2 {
 .btn-primary:hover {
   background-color: transparent;
   color: #fff;
-  transform: translateY(-3px);
+  transform: translateX(-2%);
 }
 
 /* Outline button */
@@ -790,7 +795,7 @@ h2 {
 .btn-outline:hover {
   background-color: #fff;
   color: #000;
-  transform: translateY(-3px);
+  transform: translateX(-2%;
 }
 
 /* Responsive */
@@ -814,8 +819,9 @@ h2 {
         <a href="login.html" class="login"><i class="fa fa-user-circle"></i>Login</a>
        <ul>
           <li><a class="grad-text" href="index.html">Home</a></li>
+           <li><a href="services.html">Services</a></li>
             <li><a class="current" href="portfolio.html">Works</a></li>
-            <li><a href="contact.html" class="active">Hire us</a></li>
+            <li><a href="contact.html">Hire us</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="faqs.html">FAQs</a></li>
            <br>
@@ -1034,7 +1040,7 @@ marquee.addEventListener('mousemove', (e) => {
 
             if (logo) {
                 logo.onclick = function() {
-                    window.location.href = "/";
+                    window.location.href = "index.html";
                 };
             }
         });

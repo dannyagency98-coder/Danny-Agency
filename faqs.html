@@ -41,6 +41,12 @@
     outline: none;
 }
 
+ @media (max-width: 920px) {
+  h2{
+    font-size48px;
+  }
+ }
+ 
 body, html {
     margin: 0;
     padding: 0;
@@ -394,6 +400,7 @@ span.accordion-title {
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
+    display: none;
 }
 .login:hover {
   color: #8d8d8d !important;
@@ -481,8 +488,9 @@ nav .socials {
         <a href="login.html" class="login"><i class="fa fa-user-circle"></i>Login</a>
         <ul>
           <li><a class="grad-text" href="index.html">Home</a></li>
+             <li><a href="services.html">Services</a></li>
             <li><a class="grad-text" href="portfolio.html">Works</a></li>
-            <li><a href="contact.html" class="active">Hire us</a></li>
+            <li><a href="contact.html">Hire us</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="faqs.html" class="current">FAQs</a></li>
             <br>
@@ -552,7 +560,7 @@ nav .socials {
 </div>
 
 <script>
-    const items = document.querySelectorAll(".accordion button");function toggleAccordion() {  const itemToggle = this.getAttribute('aria-expanded');    for (i = 0; i < items.length; i++) {    items[i].setAttribute('aria-expanded', 'false');  }    if (itemToggle == 'false') {    this.setAttribute('aria-expanded', 'true');  }}items.forEach(item => item.addEventListener('click', toggleAccordion));document.addEventListener("DOMContentLoaded", function() {            const logo = document.querySelector('.logo');            if (logo) {                logo.onclick = function() {                    window.location.href = "/";                };            }        });
+    const items = document.querySelectorAll(".accordion button");function toggleAccordion() {  const itemToggle = this.getAttribute('aria-expanded');    for (i = 0; i < items.length; i++) {    items[i].setAttribute('aria-expanded', 'false');  }    if (itemToggle == 'false') {    this.setAttribute('aria-expanded', 'true');  }}items.forEach(item => item.addEventListener('click', toggleAccordion));document.addEventListener("DOMContentLoaded", function() {            const logo = document.querySelector('.logo');            if (logo) {                logo.onclick = function() {                    window.location.href = "index.html";                };            }        });
 
 document.addEventListener('DOMContentLoaded', function() {
   const checkbox = document.getElementById('click');
