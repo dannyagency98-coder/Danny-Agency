@@ -41,82 +41,6 @@
     font-size:48px !important;
   }
  }
-body {
-  background-color: #000;
-  color: #ccc;
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-}
-
-.hero-section {
-  padding: 80px 20px;
-}
-
-/* Left text */
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 30px;
-  line-height: 1.2;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-/* Cards */
-.hero-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.card {
-  background-color: #111;
-  border: 1px solid #222;
-  border-radius: 12px;
-  padding: 25px;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  background-color: #1a1a1a;
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 20px;
-  }
-}
         
 *{
     margin: 0;
@@ -453,6 +377,106 @@ nav .socials {
       opacity: 0;
     }
   }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #ccc;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+.hero-section {
+  padding: 80px 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left text */
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.hero-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 30px 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.card:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 2rem;
+  color: #00e0ff;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
 
     </style>
 
@@ -509,42 +533,48 @@ nav .socials {
         </div>
     </section>
 </div>
-      <section class="hero-section">
+
+  <section class="hero-section">
     <div class="container">
       <!-- Left Content -->
       <div class="hero-text">
-        <h1>Built for Momentum,<br>Designed for Growth</h1>
+        <h1>Engineered for Momentum,<br>Built for Scalable Growth</h1>
         <p>
-          We’re a team of builders and strategists who turn big ideas into scalable products.
-     Every concept, every design choice, every line of code is crafted with intent to help your business move faster, smarter, and further.
-    </p>
+          We are a collective of builders, strategists, and operators dedicated to transforming bold ideas into scalable realities.
+          Every strategy, design decision, and line of code is executed with precision — driving efficiency, innovation, and sustainable growth for your business.
+        </p>
         <p>
-          We know what it takes to launch and scale because we’ve done it ourselves.
-     Our process blends startup speed with enterprise-level precision, ensuring every project we ship delivers measurable impact and long-term success.
+          With firsthand experience launching and scaling ventures, we understand the challenges and opportunities that define growth.
+          Our approach combines the agility of a startup with the rigor of enterprise execution — ensuring every engagement delivers measurable impact and long-term value.
         </p>
       </div>
 
       <!-- Right Content (Cards) -->
       <div class="hero-cards">
         <div class="card">
-          <h3>Growth-Driven</h3>
-          <p>We focus on meaningful results, not just deliverables but driving measurable growth for your business.</p>
+          <div class="icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Outcome-Obsessed</h3>
+          <p>We prioritize meaningful results over outputs — focusing on measurable performance, impact, and lasting business value.</p>
         </div>
         <div class="card">
-          <h3>True Partnership</h3>
-          <p>We don't disappear after launch. We're committed to your vision long after launch day.</p>
+          <div class="icon"><i class="fas fa-handshake"></i></div>
+          <h3>Partnership-Driven</h3>
+          <p>We operate as an extension of your team, aligning deeply with your goals and staying committed well beyond launch.</p>
         </div>
         <div class="card">
+          <div class="icon"><i class="fas fa-lightbulb"></i></div>
           <h3>Founder-Minded</h3>
-          <p>We think like entrepreneurs, not agencies. Your mission becomes our mission.</p>
+          <p>We bring an entrepreneurial mindset to every engagement, treating your vision and challenges as our own.</p>
         </div>
         <div class="card">
-          <h3>Stage-Smart</h3>
-          <p>FFrom early validation to full-scale growth, we tailor our approach to your business stage.</p>
+          <div class="icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Stage-Ready</h3>
+          <p>From early-stage validation to enterprise-scale execution, we adapt our process to meet your organization’s current maturity and future ambition.</p>
         </div>
       </div>
     </div>
   </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
