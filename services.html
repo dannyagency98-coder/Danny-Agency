@@ -523,6 +523,85 @@ nav .socials {
     font-size: 1.2rem;
   }
 }
+* CTA Section */
+.cta-section {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-container h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Solid button */
+.btn-primary {
+  background-color: #ccc;
+  color: #000;
+  border: 2px solid #ccc;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #ccc;
+  transform: translateX(-2%);
+}
+
+/* Outline button */
+.btn-outline {
+  background-color: transparent;
+  color: #ccc;
+  border: 2px solid #ccc;
+}
+
+.btn-outline:hover {
+  background-color: #ccc;
+  color: #000;
+  transform: translateX(2%);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cta-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 </style>
   
@@ -579,6 +658,67 @@ nav .socials {
   </div>
 </section>
 
+<section class="why-choose-us text-center py-5">
+  <h2>Why Choose Us</h2>
+  <p class="intro-text">
+    We deliver excellence through innovation, precision, and partnership — ensuring your success
+    from concept to scale with measurable business impact.
+  </p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon-wrap">
+        <i class="bi bi-lightning-charge"></i>
+      </div>
+      <h3>Accelerated Delivery</h3>
+      <p>
+        Our agile workflows enable faster time-to-market without compromising on quality or scalability.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="icon-wrap">
+        <i class="bi bi-graph-up-arrow"></i>
+      </div>
+      <h3>Cost-Efficient Scaling</h3>
+      <p>
+        We engineer solutions that optimize resources and deliver measurable ROI for sustainable growth.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="icon-wrap">
+        <i class="bi bi-star-fill"></i>
+      </div>
+      <h3>Unmatched Quality</h3>
+      <p>
+        Every product we deliver meets enterprise-grade standards — built for performance, reliability, and impact.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <div class="icon-wrap">
+        <i class="bi bi-shield-check"></i>
+      </div>
+      <h3>End-to-End Support</h3>
+      <p>
+        From ideation to post-launch optimization, we’re your long-term growth partner at every stage.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-container">
+    <h2>Ready to Build What’s Next?</h2>
+    <p>
+      Let’s create something that sets a new standard.
+    </p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary">Start Your Journey →</a>
+      <a href="login.html" class="btn btn-outline">Explore our work</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="socials">
             <a href="https://instagram.com/dannyagency_" target="_blank"><i class="bi bi-instagram"></i></a>
