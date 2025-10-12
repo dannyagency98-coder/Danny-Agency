@@ -602,6 +602,128 @@ nav .socials {
     text-align: center;
   }
 }
+.why-choose-us {
+  background-color: #000;
+  color: #ccc;
+  padding: 80px 20px;
+}
+
+.why-choose-us h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.why-choose-us .intro-text {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #aaa;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.why-card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Icons */
+.icon-wrap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  background-color: #1a1a1a;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Icon styles with distinct gradients */
+.icon-wrap i {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #00ffe7, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Unique icon colors per card */
+.why-card:nth-child(1) i {
+  background: linear-gradient(135deg, #00ffe7, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-card:nth-child(2) i {
+  background: linear-gradient(135deg, #ff4f91, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-card:nth-child(3) i {
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-card:nth-child(4) i {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Typography */
+.why-card h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card {
+    padding: 25px 15px;
+  }
+
+  .why-card h3 {
+    font-size: 1.2rem;
+  }
+}
 
 </style>
   
@@ -659,7 +781,7 @@ nav .socials {
 </section>
 
 <section class="why-choose-us text-center py-5">
-  <h2>Why Choose Us</h2>
+  <h2>Why Choose Danny Agency</h2>
   <p class="intro-text">
     We deliver excellence through innovation, precision, and partnership — ensuring your success
     from concept to scale with measurable business impact.
