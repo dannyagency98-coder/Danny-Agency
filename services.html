@@ -414,60 +414,116 @@ nav .socials {
       opacity: 0;
     }
   }
-  .icon-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid #ccc;
+.what-we-do {
+  background-color: #000;
+  padding: 80px 20px;
 }
 
+.what-we-do h2 {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* Layout */
+.what-we-do-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Boxes */
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+/* Base Icon Styles */
 .icon-box i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #8d8d8d, #999);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 3.2rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  background: linear-gradient(90deg, #8d8d8d, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Unique Icon Gradients */
+.icon-app {
+  background: linear-gradient(135deg, #00ffe7, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-web {
+  background: linear-gradient(135deg, #ff4f91, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-3d {
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-design {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text */
 .icon-box h3 {
-    margin-top: 10px;
-    font-size: 1.5rem;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .icon-box p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #ccc;
+  font-size: 1rem;
+  color: #ccc;
+  max-width: 85%;
+  margin: 0 auto;
 }
 
+/* Hover Effects */
 .icon-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.4), 
-                0 0 15px 8px rgba(200, 200, 200, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.1),
+              0 0 15px 8px rgba(255, 255, 255, 0.05);
 }
-@media (max-width: 767px) {
-    .icon-box {
-        margin-bottom: 20px;
-    }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .what-we-do-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .icon-box {
+    padding: 25px 15px;
+  }
+
+  .icon-box h3 {
+    font-size: 1.2rem;
+  }
 }
-.what-we-do h2 {
-    text-transform: uppercase;
-}
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1* var(--bs-gutter-y));
-    margin-right: calc(-.5* var(--bs-gutter-x));
-    margin-left: calc(-.5* var(--bs-gutter-x));
-}
+
 </style>
   
 
@@ -494,40 +550,35 @@ nav .socials {
         </div>
         </ul>
     </nav>
-       <section class="what-we-do text-white text-center py-5">
-        <h2>WHAT WE DO</h2>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                <div class="icon-box">
-                    <i class="bi bi-phone"></i>
-                    <h3>App Development</h3>
-                    <p>We build cutting-edge mobile applications that are user-friendly, feature-rich, and tailored to meet your business needs.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                <div class="icon-box">
-                    <i class="bi bi-laptop"></i>
-                    <h3>Website Development</h3>
-                    <p>Our team creates responsive, dynamic websites that provide an exceptional user experience and drive business growth.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                <div class="icon-box">
-                    <i class="bi bi-box"></i>
-                    <h3>3D Works</h3>
-                    <p>We bring ideas to life with our 3D modeling and animation services, creating visually stunning and engaging content.</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
-                <div class="icon-box">
-                    <i class="bi bi-palette"></i>
-                    <h3>Graphic Designs</h3>
-                    <p>Our creative designers craft visually appealing graphics that effectively communicate your brand's message and identity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-   
+<section class="what-we-do text-white text-center py-5">
+  <h2>WHAT WE DO</h2>
+  <div class="what-we-do-container">
+    <div class="icon-box">
+      <i class="bi bi-phone icon-app"></i>
+      <h3>App Development</h3>
+      <p>We build cutting-edge mobile applications that are user-friendly, feature-rich, and tailored to meet your business needs.</p>
+    </div>
+
+    <div class="icon-box">
+      <i class="bi bi-laptop icon-web"></i>
+      <h3>Website Development</h3>
+      <p>Our team creates responsive, dynamic websites that provide an exceptional user experience and drive business growth.</p>
+    </div>
+
+    <div class="icon-box">
+      <i class="bi bi-box icon-3d"></i>
+      <h3>3D Works</h3>
+      <p>We bring ideas to life with our 3D modeling and animation services, creating visually stunning and engaging content.</p>
+    </div>
+
+    <div class="icon-box">
+      <i class="bi bi-palette icon-design"></i>
+      <h3>Graphic Designs</h3>
+      <p>Our creative designers craft visually appealing graphics that effectively communicate your brand's message and identity.</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="socials">
             <a href="https://instagram.com/dannyagency_" target="_blank"><i class="bi bi-instagram"></i></a>
