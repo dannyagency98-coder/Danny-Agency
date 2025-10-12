@@ -459,6 +459,15 @@ nav .socials {
 .what-we-do h2 {
     text-transform: uppercase;
 }
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
 </style>
   
 
@@ -485,9 +494,8 @@ nav .socials {
         </div>
         </ul>
     </nav>
-        <h2>SERVICES</h2>
        <section class="what-we-do text-white text-center py-5">
-        <h2>What We Do</h2>
+        <h2>WHAT WE DO</h2>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                 <div class="icon-box">
