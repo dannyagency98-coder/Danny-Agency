@@ -79,7 +79,7 @@ body {
             justify-content: space-between;
             padding: 0 50px;
             flex-wrap: wrap;
-            flex-direction: row-reverse;
+            flex-direction: row;
             text-transform: uppercase !important;
         }
         nav .logo {
@@ -90,7 +90,7 @@ body {
             position: relative;
             left: .4em;
             cursor: pointer;
-
+           filter: brightness(0) saturate(100%) invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
         }
         nav ul {
             display: flex;
@@ -118,14 +118,6 @@ body {
             color: #000;
         }
         @media (max-width: 48em) {
-            nav a.active {
-              width: auto;
-              display: inline-flex;
-              padding: .6em 2em;
-            }
-            .logo {
-                display: block !important;
-            }
             nav {
                 flex-direction: row;
                 align-items: center;
@@ -536,12 +528,12 @@ nav .socials {
 
 
   <nav>
-        
+        <img src="https://firebasestorage.googleapis.com/v0/b/octen-29d12.appspot.com/o/presentations%2FUl5d1%2FchatImages%2F1721687289086_my_logo-removebg-preview.png?alt=media&token=33360df2-8425-4642-9867-209bee52f72e" alt="Logo Image" class="logo" style="transform: rotate3d(0, 0, 0, 0deg);">       
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="https://firebasestorage.googleapis.com/v0/b/octen-29d12.appspot.com/o/presentations%2FUl5d1%2FchatImages%2F1721687289086_my_logo-removebg-preview.png?alt=media&token=33360df2-8425-4642-9867-209bee52f72e" alt="Logo Image" class="logo" style="transform: rotate3d(0, 0, 0, 0deg);">
+
        
     <a href="login.html" class="login"><i class="fa fa-user-circle"></i>Login</a>
         <ul>

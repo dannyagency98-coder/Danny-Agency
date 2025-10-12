@@ -209,7 +209,7 @@ body {
             justify-content: space-between;
             padding: 0 50px;
             flex-wrap: wrap;
-            flex-direction: row-reverse;
+            flex-direction: row;
             text-transform: uppercase !important;
         }
         nav .logo {
@@ -220,6 +220,7 @@ body {
             position: relative;
             left: .4em;
             cursor: pointer;
+           filter: brightness(0) saturate(100%) invert(85%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
 
         }
         nav ul {
@@ -248,14 +249,6 @@ body {
             color: #000;
         }
         @media (max-width: 48em) {
-           nav a.active {
-              width: auto;
-              display: inline-flex;
-              padding: .6em 2em;
-            }
-            .logo {
-                display: block !important;
-            }
             nav {
                 flex-direction: row;
                 align-items: center;
@@ -812,11 +805,11 @@ h2 {
 }
     </style>
     <nav>
+     <img src="logo.png" alt="Logo" class="logo" loading="lazy">
         <input type="checkbox" id="click">
         <label for="click" class="menu-btn">
             <i class="fas fa-bars"></i>
         </label>
-        <img src="logo.png" alt="Logo" class="logo" loading="lazy">
         <a href="login.html" class="login"><i class="fa fa-user-circle"></i>Login</a>
        <ul>
           <li><a class="grad-text" href="index.html">Home</a></li>
