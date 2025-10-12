@@ -38,6 +38,11 @@
   border: none;
   outline: none;
 }
+ @media (max-width: 920px) {
+  h2{
+    font-size48px;
+  }
+ }
 body, html {
     margin: 0;
     padding: 0;
@@ -76,7 +81,6 @@ body {
             color: #fff;
             font-size: 35px;
             font-weight: 600;
-            display: none;
             width: 2em;
             position: relative;
             left: .4em;
@@ -250,6 +254,7 @@ form {
   align-items: center;
   text-transform: uppercase;
   text-decoration: none;
+  display: none;
 }
 .login:hover {
   color: #8d8d8d !important;
@@ -472,8 +477,9 @@ nav .socials {
         <a href="login.html" class="login current"><i class="fa fa-user-circle"></i>Login</a>
        <ul>
           <li><a class="grad-text" href="index.html">Home</a></li>
+             <li><a href="services.html">Services</a></li>
             <li><a class="grad-text" href="portfolio.html">Works</a></li>
-            <li><a href="contact.html" class="active">Hire us</a></li>
+            <li><a href="contact.html">Hire us</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="faqs.html">FAQs</a></li>
          <br>
@@ -606,6 +612,13 @@ window.addEventListener('load', () => {
 </script>
 <!-- Optimize Page Load Speed -->
 <script>
+  // Logo click event to navigate
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.onclick = function() {
+            window.location.href = "index.html";
+        };
+    }
   // Defer loading of images for better performance
   document.addEventListener("DOMContentLoaded", function() {
     const imgs = document.querySelectorAll("img[data-src]");
