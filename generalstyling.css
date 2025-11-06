@@ -41,6 +41,8 @@ nav ul li a {
   /* Slide down when opened */
   #click:checked ~ ul {
     transform: translateY(0) !important;
+    transition: transform 0.25s ease-in-out !important;
+
   }
 
   /* Header inside dropdown (logo + close button) */
