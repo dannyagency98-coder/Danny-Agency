@@ -51,7 +51,10 @@ nav ul li a {
     padding: 25px 30px !important;
     width: 100% !important;
   }
-
+            nav ul li a {
+                opacity: 0; /* Start with hidden links */
+  transform: none !important; /* Start off-screen */
+  transition: none!important; /* Transition effects */
   nav ul .menu-logo {
     width: 45px !important;
     filter: brightness(0) saturate(100%) invert(100%) !important;
@@ -69,6 +72,8 @@ nav ul li a {
     padding: 18px 30px !important;
     list-style: none !important;
     margin: 0 !important;
+    width: auto!important;
+    top: 60px !important;
   }
 
   nav ul li a {
