@@ -109,3 +109,6 @@ nav ul li a {
     display: none !important;
   }
 }
+  nav ul .cta-btn {
+    display: none ;
+  }
