@@ -68,6 +68,7 @@ nav ul li a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 18px 30px !important;
     list-style: none !important;
+    margin: 0 !important;
   }
 
   nav ul li a {
