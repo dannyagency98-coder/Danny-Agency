@@ -109,6 +109,7 @@ nav ul li a {
     display: none !important;
   }
 }
+@media (min-width: 100aa0px) {
   nav ul .cta-btn {
     display: none ;
   }
