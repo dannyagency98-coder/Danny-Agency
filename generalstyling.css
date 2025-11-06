@@ -7,6 +7,7 @@ nav ul li a {
     padding: 0 25px !important;
   }
 
+  /* Show hamburger */
   nav .menu-btn {
     display: block !important;
     color: #fff !important;
@@ -15,9 +16,10 @@ nav ul li a {
   }
 
   #click:checked ~ .menu-btn i:before {
-    content: "\f00d" !important; /* X icon */
+    content: "\f00d" !important;
   }
 
+  /* Fullscreen overlay menu */
   nav ul {
     position: fixed !important;
     top: 0 !important;
@@ -28,73 +30,84 @@ nav ul li a {
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding: 100px 30px 50px !important;
-    overflow-y: auto !important;
-    transition: transform 0.5s ease-in-out !important;
+    align-items: stretch !important;
+    padding: 0 !important;
     transform: translateY(-100%) !important;
+    transition: transform 0.45s ease-in-out !important;
     z-index: 1000 !important;
+    overflow: hidden !important; /* Prevent scrolling */
   }
 
-  /* Slide down effect */
+  /* Slide down when opened */
   #click:checked ~ ul {
     transform: translateY(0) !important;
   }
 
-  nav ul li {
+  /* Header inside dropdown (logo + close button) */
+  nav ul .menu-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 25px 30px !important;
     width: 100% !important;
+  }
+
+  nav ul .menu-logo {
+    width: 45px !important;
+    filter: brightness(0) saturate(100%) invert(100%) !important;
+  }
+
+  nav ul .close-btn {
+    color: #fff !important;
+    font-size: 28px !important;
+    cursor: pointer !important;
+  }
+
+  /* Menu links */
+  nav ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 15px 0 !important;
+    padding: 18px 30px !important;
+    list-style: none !important;
   }
 
   nav ul li a {
     color: #fff !important;
-    font-size: 20px !important;
-    letter-spacing: 1px !important;
+    font-size: 18px !important;
     font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    width: 100% !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    transition: color 0.3s ease !important;
+  }
+
+  nav ul li a::after {
+    content: "›" !important;
+    font-size: 18px !important;
+    color: #fff !important;
   }
 
   nav ul li a:hover {
     color: #aaa !important;
   }
 
-  /* Arrow (>) indicator on the right side of each link */
-  nav ul li a::after {
-    content: "›" !important;
-    font-size: 20px !important;
-    color: #fff !important;
-    transition: color 0.3s ease !important;
-  }
-
   nav ul li a:hover::after {
     color: #aaa !important;
   }
 
-  /* Bottom button (Talk to Expert) */
-  nav ul::after {
-    content: "" !important;
-    flex-grow: 1 !important;
-  }
-
+  /* CTA button at bottom */
   nav ul .cta-btn {
-    width: 100% !important;
-    text-align: center !important;
-    margin-top: auto !important;
+    margin: auto 30px 40px 30px !important;
     padding: 14px 0 !important;
     border: 1px solid #fff !important;
     border-radius: 8px !important;
+    text-align: center !important;
     color: #fff !important;
-    font-size: 16px !important;
     font-weight: 600 !important;
-    text-transform: uppercase !important;
+    font-size: 16px !important;
     letter-spacing: 1px !important;
+    text-transform: uppercase !important;
     text-decoration: none !important;
     transition: all 0.3s ease !important;
   }
@@ -104,13 +117,14 @@ nav ul li a {
     color: #000 !important;
   }
 
-  /* Hide socials in this layout */
+  /* Hide socials in mobile menu */
   nav ul .socials {
     display: none !important;
   }
 }
-@media (min-width: 100aa0px) {
+
+@media (min-width: 10000px) {
   nav ul .cta-btn {
-    display: none ;
+    display: none;
   }
 }
