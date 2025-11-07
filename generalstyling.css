@@ -79,7 +79,6 @@ nav ul li a {
     top: 10px;
     position: relative;
     }
-  }
 
   nav ul li a {
     color: #fff !important;
@@ -134,7 +133,7 @@ nav ul li a {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1023px) {
   nav ul .cta-btn {
     display: none;
   }
