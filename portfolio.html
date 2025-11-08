@@ -1190,8 +1190,33 @@ window.addEventListener('load', () => {
     document.body.style.visibility = "visible";
   });
 </script>
+<script>
+  function toggleMobileCards() {
+    const cards = document.querySelectorAll(".card-link");
 
+    cards.forEach(card => {
+      const titleElement = card.querySelector("h3");
+      if (!titleElement) return;
 
+      const title = titleElement.textContent.trim();
+
+      // Check if it's one of the cards we want to hide on mobile
+      if (title === "ANOTHER STATE" || title === "SUPREME BEAUTY") {
+        if (window.innerWidth <= 768) {
+          card.style.display = "none"; // Hide the entire card
+        } else {
+          card.style.display = ""; // Show the card on larger screens
+        }
+      }
+    });
+  }
+
+  // Run on page load
+  document.addEventListener("DOMContentLoaded", toggleMobileCards);
+
+  // Run on window resize
+  window.addEventListener("resize", toggleMobileCards);
+</script>
 
 </body>
 
