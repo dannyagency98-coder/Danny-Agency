@@ -107,10 +107,10 @@ nav ul li a {
   }
 
   .icon-box p {
-    font-size: 0.9rem;
+    font-size: 0.9rem!important;
 }
 .why-choose-us .intro-text {
-    font-size: 0.9rem;
+    font-size: 0.9rem!important;
     text-align: left;
 }
 
