@@ -200,7 +200,7 @@ body {
     flex: 1 1 calc(100% - 2em);
   }
     .plus {    
-    height: 500px;
+    height: 500px!important;
   }
 }
 
@@ -1191,31 +1191,31 @@ window.addEventListener('load', () => {
   });
 </script>
 <script>
-  function toggleMobileCards() {
-    const cards = document.querySelectorAll(".card-link");
+function toggleMobileCards() {
+  const cards = document.querySelectorAll(".card-link");
 
-    cards.forEach(card => {
-      const titleElement = card.querySelector("h3");
-      if (!titleElement) return;
+  cards.forEach(card => {
+    const titleElement = card.querySelector("h3");
+    if (!titleElement) return;
 
-      const title = titleElement.textContent.trim();
+    const title = titleElement.textContent.trim();
 
-      // Check if it's one of the cards we want to hide on mobile
-      if (title === "ANOTHER STATE" || title === "SUPREME BEAUTY") {
-        if (window.innerWidth <= 768) {
-          card.style.display = "none"; // Hide the entire card
-        } else {
-          card.style.display = ""; // Show the card on larger screens
-        }
+    // Hide entire <a> element on mobile for specific cards
+    if (title === "ANOTHER STATE" || title === "SUPREME BEAUTY") {
+      if (window.innerWidth <= 768) {
+        card.style.display = "none"; // Hide the entire card-link
+      } else {
+        card.style.display = ""; // Show again on larger screens
       }
-    });
-  }
+    }
+  });
+}
 
-  // Run on page load
-  document.addEventListener("DOMContentLoaded", toggleMobileCards);
+// Run on page load
+document.addEventListener("DOMContentLoaded", toggleMobileCards);
 
-  // Run on window resize
-  window.addEventListener("resize", toggleMobileCards);
+// Run on window resize
+window.addEventListener("resize", toggleMobileCards);
 </script>
 
 </body>
