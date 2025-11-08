@@ -148,6 +148,9 @@ nav ul li a {
   .cta-container h2 {
     text-align: center;
 }
+ .plus {
+   margin: 0  1.2em;
+}
 }
 
 html {
