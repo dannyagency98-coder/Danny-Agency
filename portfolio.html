@@ -1190,29 +1190,7 @@ window.addEventListener('load', () => {
     document.body.style.visibility = "visible";
   });
 </script>
-<script>
-  // Wait for the page to load
-  document.addEventListener("DOMContentLoaded", function() {
-    // Check if screen width is 768px or smaller (mobile)
-    if (window.innerWidth <= 768) {
-      // Select all card links
-      const cards = document.querySelectorAll(".card-link");
 
-      cards.forEach(card => {
-        // Get the title of the card
-        const titleElement = card.querySelector("h3");
-        if (!titleElement) return;
-
-        const title = titleElement.textContent.trim();
-
-        // Hide specific cards on mobile
-        if (title === "ANOTHER STATE" || title === "SUPREME BEAUTY") {
-          card.style.display = "none";
-        }
-      });
-    }
-  });
-</script>
 
 
 </body>
