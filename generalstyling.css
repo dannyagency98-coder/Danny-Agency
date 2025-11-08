@@ -138,3 +138,12 @@ nav ul li a {
     display: none;
   }
 }
+
+
+
+html {
+  scroll-behavior: smooth;         /* Smooth scrolling for mouse wheel & anchor links */
+  -webkit-overflow-scrolling: touch; /* Momentum scroll on touch devices (iOS) */
+  overflow-y: scroll;              /* Ensure scroll container works */
+}
+n
