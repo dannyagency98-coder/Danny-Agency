@@ -902,7 +902,7 @@ h2 {
 
   <!-- ANOTHER STATE -->
   <a href="https://www.anotherstate.net/" target="_blank" class="card-link">
-    <div class="card" style="--card-color:#1a1a1a;">
+    <div class="card-hidden" style="--card-color:#1a1a1a;">
       <img src="https://cdn.shopify.com/s/files/1/0945/2411/3199/files/Social-Sharing-Image.webp?v=1759911990"
            alt="anotherstate" loading="lazy"
            style="filter: invert(1) brightness(0.9) contrast(0.8); background-color:#1a1a1a;">
@@ -928,7 +928,7 @@ h2 {
 
   <!-- SUPREME BEAUTY -->
   <a href="https://www.superemebeauty.com/" target="_blank" class="card-link">
-    <div class="card" style="--card-color:#1a1a1a;">
+    <div class="card-hidden" style="--card-color:#1a1a1a;">
       <img src="https://www.supremebeauty.com/cdn/shop/files/supreme-logo_340x.png?v=1614368038"
            alt="supreme beauty" loading="lazy">
       <span class="tag" style="background: linear-gradient(46deg, #cccccc, transparent); border: none; color: black">
@@ -1174,49 +1174,7 @@ window.addEventListener('load', () => {
   });
 
     </script>
-    <!-- Optimize Page Load Speed -->
-<script>
-  // Defer loading of images for better performance
-  document.addEventListener("DOMContentLoaded", function() {
-    const imgs = document.querySelectorAll("img[data-src]");
-    imgs.forEach(img => {
-      img.setAttribute("src", img.getAttribute("data-src"));
-      img.onload = () => img.removeAttribute("data-src");
-    });
-  });
-
-  // Minimize reflows & repaints
-  window.addEventListener("load", () => {
-    document.body.style.visibility = "visible";
-  });
-</script>
-<script>
-function toggleMobileCards() {
-  const cards = document.querySelectorAll(".card-link");
-
-  cards.forEach(card => {
-    const titleElement = card.querySelector("h3");
-    if (!titleElement) return;
-
-    const title = titleElement.textContent.trim();
-
-    // Hide entire <a> element on mobile for specific cards
-    if (title === "ANOTHER STATE" || title === "SUPREME BEAUTY") {
-      if (window.innerWidth <= 768) {
-        card.style.display = "none"; // Hide the entire card-link
-      } else {
-        card.style.display = ""; // Show again on larger screens
-      }
-    }
-  });
-}
-
-// Run on page load
-document.addEventListener("DOMContentLoaded", toggleMobileCards);
-
-// Run on window resize
-window.addEventListener("resize", toggleMobileCards);
-</script>
+ 
 
 </body>
 
