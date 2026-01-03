@@ -519,19 +519,7 @@ nav .socials {
     gap: 1em;
 }
 }
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    z-index: 9999;
-    height: 100vh;
-  }
+
 
   .circle {
     width: 30px;
@@ -1244,46 +1232,6 @@ width: 2em !important;
             });
         });
 
-                    const marquee = document.getElementById('marquee');
-const marqueeContent = marquee.querySelector('.marquee-content');
-let isDragging = false;
-let startX;
-let scrollDirection = 'left'; // 'left' for left-to-right, 'right' for right-to-left
-
-// Start dragging
-marquee.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    marquee.style.cursor = 'grabbing';
-});
-
-// Stop dragging
-window.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        marquee.style.cursor = 'grab';
-        // Restart the animation in the current direction
-        marqueeContent.style.animation = `marquee-${scrollDirection} 10s linear infinite`;
-    }
-});
-
-// Handle dragging
-marquee.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        const currentX = e.clientX;
-        if (currentX > startX) {
-            if (scrollDirection !== 'right') {
-                scrollDirection = 'right';
-                marqueeContent.style.animation = `marquee-right 10s linear infinite`;
-            }
-        } else if (currentX < startX) {
-            if (scrollDirection !== 'left') {
-                scrollDirection = 'left';
-                marqueeContent.style.animation = `marquee-left 10s linear infinite`;
-            }
-        }
-    }
-});
 
     </script>
     <script>
@@ -1334,14 +1282,6 @@ marquee.addEventListener('mousemove', (e) => {
   applyMobileStyles();
   window.addEventListener('resize', applyMobileStyles);
 });
-
-
-window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.querySelector('.preloader').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }, 2000);
-  });
 
     </script>
    <button class="back-to-top" id="backToTop">
