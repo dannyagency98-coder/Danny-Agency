@@ -558,7 +558,17 @@ nav .socials {
       opacity: 0;
     }
   }
+/* Loading dots animation */
+.loading-dots::after {
+    content: '.';
+    animation: dots 1.5s steps(3, end) infinite;
+}
 
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
   </style>
 </head>
 
@@ -657,65 +667,83 @@ nav .socials {
             <label for="others">Others</label>
         </div>
 
-        <div class="button-cover">
-            <button type="submit">Send Message</button>
+         <div class="button-cover">
+                <button type="submit" id="submitBtn">Send Message</button>
             <div id="success-toast"></div>
         </div>
     </form>
 </div>
 
 <script>
-(function() {
-    // Initialize EmailJS
-    emailjs.init("ml8GpF6KTxTEOJxvr"); // Your EmailJS User ID
-})();
+        (function() {
+            // Initialize EmailJS
+            emailjs.init("ml8GpF6KTxTEOJxvr"); // Your EmailJS User ID
+        })();
 
-// Listen for form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+        const submitBtn = document.getElementById('submitBtn');
 
-    const form = this;
+        // Listen for form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-    // Remove any existing toast
-    let existingToast = document.getElementById('success-toast');
-    if (existingToast) existingToast.remove();
+            const form = this;
 
-    // 1️⃣ Send the main "Contact Us" email to your inbox
-    emailjs.sendForm("service_7s6dqpb", "template_aseqaaw", form)
-        .then(function() {
-            // Create toast message
-            const toast = document.createElement('div');
-            toast.id = 'success-toast';
-            toast.innerHTML = `
-                 Your message has been sent successfully!<br>
-                We will get back to you within 24 hours.
-            `;
-            document.body.appendChild(toast);
+            // Change button to loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading-dots');
+            submitBtn.textContent = 'Sending';
 
-            // Fade in
-            setTimeout(() => toast.classList.add('show'), 50);
+            // Remove any existing toast
+            let existingToast = document.getElementById('success-toast');
+            if (existingToast) existingToast.remove();
 
-            // Fade out after 5 seconds
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 500); // Remove from DOM after fade out
-            }, 5000);
+            // 1️⃣ Send the main "Contact Us" email to your inbox
+            emailjs.sendForm("service_7s6dqpb", "template_aseqaaw", form)
+                .then(function() {
+                    // Create toast message
+                    const toast = document.createElement('div');
+                    toast.id = 'success-toast';
+                    toast.innerHTML = `
+                         Your message has been sent successfully!<br>
+                        We will get back to you within 24 hours.
+                    `;
+                    document.body.appendChild(toast);
 
-            // Clear the form
-            form.reset();
-        }, function(error) {
-            alert('Failed to send message. Error: ' + JSON.stringify(error));
+                    // Fade in
+                    setTimeout(() => toast.classList.add('show'), 50);
+
+                    // Fade out after 5 seconds
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 500); // Remove from DOM after fade out
+                    }, 5000);
+
+                    // Reset button
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('loading-dots');
+                        submitBtn.textContent = 'Send Message';
+                    }, 500);
+
+                    // Clear the form
+                    form.reset();
+                }, function(error) {
+                    // Reset button on error
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('loading-dots');
+                    submitBtn.textContent = 'Send Message';
+                    alert('Failed to send message. Error: ' + JSON.stringify(error));
+                });
+
+            // 2️⃣ Send Auto-Reply to user
+            emailjs.sendForm("service_7s6dqpb", "template_6tcfzt4", form)
+                .then(function() {
+                    console.log("Auto-reply sent successfully!");
+                }, function(error) {
+                    console.warn("Auto-reply failed:", error);
+                });
         });
-
-    // 2️⃣ Send Auto-Reply to user
-    emailjs.sendForm("service_7s6dqpb", "template_6tcfzt4", form)
-        .then(function() {
-            console.log("Auto-reply sent successfully!");
-        }, function(error) {
-            console.warn("Auto-reply failed:", error);
-        });
-});
-</script>
+    </script>
 
 <style>
 /* Toast message styling */
@@ -743,7 +771,38 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     transform: translate(-50%, -50%) scale(1);
 }
 </style>
-
+<script>
+    const btn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+    
+    btn.addEventListener('click', (e) => {
+        for (let i = 0; i < 8; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const angle = (i / 8) * Math.PI * 2;
+            const distance = 40;
+            particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+            particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+            particle.style.left = '50%';
+            particle.style.top = '50%';
+            btn.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 1000);
+        }
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 
 
 <script>
@@ -828,38 +887,7 @@ window.addEventListener('load', () => {
     document.body.style.visibility = "visible";
   });
 </script>
-<script>
-    const btn = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
-    });
-    
-    btn.addEventListener('click', (e) => {
-        for (let i = 0; i < 8; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const angle = (i / 8) * Math.PI * 2;
-            const distance = 40;
-            particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
-            particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
-            particle.style.left = '50%';
-            particle.style.top = '50%';
-            btn.appendChild(particle);
-            
-            setTimeout(() => particle.remove(), 1000);
-        }
-        
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-</script>
+
     <footer>
        <div class="socials">
              <a href="https://instagram.com/dannyagency_" target="_blank"><i class="bi bi-instagram"></i></a>
