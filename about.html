@@ -595,7 +595,6 @@ body {
     </div>
   </section>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -702,15 +701,48 @@ window.addEventListener('load', () => {
     document.body.style.visibility = "visible";
   });
 </script>
-
+<script>
+    const btn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+    
+    btn.addEventListener('click', (e) => {
+        for (let i = 0; i < 8; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const angle = (i / 8) * Math.PI * 2;
+            const distance = 40;
+            particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+            particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+            particle.style.left = '50%';
+            particle.style.top = '50%';
+            btn.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 1000);
+        }
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 <footer>
 <div class="socials">
              <a href="https://instagram.com/dannyagency_" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://www.tiktok.com/@danny_agency_" target="_blank"><i class="bi bi-tiktok"></i></a>
          <a href="https://discord.com/users/1136152092051001445" target="_blank"><i class="bi bi-discord"></i></a>
         </div>
-  <a href="#" class="copyright">&copy; 2025 DANNY AGENCY,ALL RIGHTS RESERVED</a>
+  <a href="#" class="copyright">&copy; 2026 DANNY AGENCY,ALL RIGHTS RESERVED</a>
 </footer>
-
+    <button class="back-to-top" id="backToTop">
+        <div class="arrow"></div>
+    </button>
 </body>
 </html>
